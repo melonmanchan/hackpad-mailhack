@@ -1,0 +1,5 @@
+{
+    "sendgrid_key"   : "API_KEY",
+    "container_name" : "CONTAINER_NAME",
+    "hackpad_url"    : "HACKPAD_URL"
+}
