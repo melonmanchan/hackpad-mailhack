@@ -1,5 +1,6 @@
 {
     "sendgrid_key"   : "API_KEY",
     "container_name" : "CONTAINER_NAME",
+    "from_mail"      : "FROM_MAIL",
     "hackpad_url"    : "HACKPAD_URL"
 }

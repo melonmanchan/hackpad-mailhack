@@ -18,7 +18,7 @@ def send_mail(toMail, token):
 
     message = sendgrid.Mail(to=toMail, subject='Verifying your Hackpad account',
                             html='Your verification link is <a href="{}">{}</a> . Happy hacking!'.format(verificationlink, verificationlink),
-                            from_email='noreply@layersbox.aalto.fi')
+                            from_email= config['from_mail'])
     status, resp = sendgridclient.send(message)
     print status
     print resp
