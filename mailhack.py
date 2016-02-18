@@ -33,15 +33,16 @@ def main():
             for row in csv.DictReader(f, delimiter='\t')]
 
         for i, val in enumerate(outputlist):
-            email = val['email']
-            token = val['token']
+            if 'email' in val and 'token' in val:
+                email = val['email']
+                token = val['token']
 
-            if not email in filecontents:
-                print 'inviting person ' + email
-                send_mail(email, token)
+                if not email in filecontents:
+                    print 'inviting person ' + email
+                    send_mail(email, token)
 
-                print 'appending... ' + email
-                mailfile.write(email + '\n')
+                    print 'appending... ' + email
+                    mailfile.write(email + '\n')
 
         mailfile.close()
         time.sleep(10)
