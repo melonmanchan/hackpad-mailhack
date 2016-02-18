@@ -1,4 +1,4 @@
-#!usr/bin/env python
+#!/usr/bin/env python
 # Hack for sending Hackpad invitatiol emails
 
 import StringIO
