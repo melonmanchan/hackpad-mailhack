@@ -16,7 +16,7 @@ sendgridclient = sendgrid.SendGridClient(config['sendgrid_key'])
 def send_mail(toMail, token):
     verificationlink = config['hackpad_url'] + '/ep/account/validate-email?email=' + toMail + '&token=' + token
 
-    message = sendgrid.Mail(to=toMail, subject='Verifying your Aalto Hackpad account',
+    message = sendgrid.Mail(to=toMail, subject='Verifying your Hackpad account',
                             html='Your verification link is <a href="{}">{}</a> . Happy hacking!'.format(verificationlink, verificationlink),
                             from_email='noreply@layersbox.aalto.fi')
     status, resp = sendgridclient.send(message)
