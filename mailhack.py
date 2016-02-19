@@ -27,7 +27,7 @@ def main():
     while True:
         mailfile = open('already_sent.txt', 'ab+')
         filecontents = mailfile.read().splitlines()
-        cmdoutput = subprocess.check_output("docker exec -it " + config['container_name'] + " mysql  --batch  hackpad -e 'select email, token from email_signup;'", shell=True)
+        cmdoutput = subprocess.check_output("docker exec -i " + config['container_name'] + " mysql  --batch  hackpad -e 'select email, token from email_signup;'", shell=True)
         f = StringIO.StringIO(cmdoutput)
         outputlist = [{k: v for k, v in row.items()}
             for row in csv.DictReader(f, delimiter='\t')]
